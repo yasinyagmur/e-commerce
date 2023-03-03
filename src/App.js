@@ -1,17 +1,37 @@
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
+import Home from "./Pages/Home/Home";
+import Product from "./Pages/Product/Product";
+import Products from "./Pages/Products/Products";
+import Navbar from "./Components/Navbar/Navbar";
+import Footer from "./Components/Footer/Footer";
 
+const Layout = () => {
+  return (
+    <div className="app">
+      <Navbar />
+      <Outlet />
+      <Footer />
+    </div>
+  );
+};
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <span>Home</span>,
-  },
-  {
-    path: "/products/:id",
-    element: <span>Category</span>,
-  },
-  {
-    path: "/product/:id",
-    element: <span>Product</span>,
+    element: <Layout />,
+    children: [
+      {
+        path: "/",
+        element: <Home />,
+      },
+      {
+        path: "/products/:id",
+        element: <Products />,
+      },
+      {
+        path: "/product/:id",
+        element: <Product />,
+      },
+    ],
   },
 ]);
 function App() {
