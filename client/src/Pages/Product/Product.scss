@@ -20,11 +20,23 @@
     }
     .mainImg {
       flex: 5;
+      position: relative;
 
       img {
         width: 100%;
         max-height: 800px;
         object-fit: cover;
+      }
+      span {
+        position: absolute;
+        top: 5px;
+        right: 5px;
+        background-color: white;
+        color: teal;
+        padding: 3px 5px;
+        z-index: 3;
+        font-weight: 500;
+        font-style: 12px;
       }
     }
   }
@@ -96,6 +108,7 @@
       color: gray;
       font-size: 14px;
       margin-top: 30px;
+      position: relative;
 
       hr {
         width: 200px;

@@ -3,12 +3,15 @@ import useFetch from "../../hooks/useFetch";
 import Card from "../Card/Card";
 import "./List.scss";
 const List = ({ subCats, sort, maxPrice, catId }) => {
-  console.log(subCats);
+  const Filter = subCats
+    .map((item) => `&[filters][sub_categories][id][$eq]=${item}`)
+    .join("");
   const { data, loading, error } = useFetch(
-    `/products?populate=*&[filters][categories][id]=${catId}${subCats.map(
-      (item) => `&[filters][sub_categories][id][$eq]=${item}`
-    )}`
+    `/products?populate=*&[filters][categories][id]=${catId}${Filter}&[filters][price][$lte]=${maxPrice}${
+      sort ? "&sort=price" : ""
+    }`
   );
+
   return (
     <div className="list">
       {loading
