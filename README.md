@@ -1,4 +1,4 @@
-### - [E-commerce React Redux & React Router Dom & Scss & Strapi & Strapi Rest Api  ](https://move-app-reactrouter-firebase.netlify.app/)
+### - [CLICK FOR LIVE LINK E-commerce React Redux & React Router Dom & Scss & Strapi & Strapi Rest Api  ](https://move-app-reactrouter-firebase.netlify.app/)
 
 # 🚀 Getting started with Strapi
 
